@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { JsonService } from './json.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Prueba-Angular';
+  constructor(public json: JsonService){
+    this.json.getJson('../assets/ofertas.json').subscribe((res:any)=>{
+    });
+  }
 }
